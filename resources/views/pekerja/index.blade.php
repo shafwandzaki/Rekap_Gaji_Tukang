@@ -27,8 +27,8 @@
                         <td class="px-4 py-3">
                             <div class="flex justify-end gap-2">
                                 <a href="{{ route('pekerja.edit', $item) }}"
-                                   class="rounded-lg border border-white/10 px-3 py-1.5 text-blue-400 transition-colors hover:bg-white/5">
-                                    Edit
+                                   class="rounded-lg border border-blue-700 px-3 py-1.5 text-blue-400 transition-colors hover:bg-white/5">
+                                    <x-svg-edit></x-svg-edit>
                                 </a>
                                 <form method="POST" action="{{ route('pekerja.destroy', $item) }}"
                                       onsubmit="return confirm('Hapus {{ addslashes($item->nama) }}? Riwayat rekap lama tetap aman.')">
@@ -36,7 +36,7 @@
                                     @method('DELETE')
                                     <button type="submit"
                                             class="rounded-lg border border-red-500/30 px-3 py-1.5 text-red-300 transition-colors hover:bg-red-500/10">
-                                        Hapus
+                                        <x-svg-hapus></x-svg-hapus>
                                     </button>
                                 </form>
                             </div>
