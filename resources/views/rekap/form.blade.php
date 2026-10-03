@@ -158,23 +158,23 @@
                 </div>
 
                 {{-- Hari, gaji harian, total --}}
-                <div class="grid gap-4 sm:flex sm:flex-wrap sm:items-end">
-                    <div class="w-16">
+                <div class="gap-4 mb-4 flex">
+                    <div class="w-16 sm:w-24">
                         <label class="mb-1 block text-xs text-gray-400">Hari</label>
                         <input type="text" inputmode="decimal" placeholder="7"
                                :name="`items[${index}][hari]`" x-model="item.hari"
                                class="{{ $kelasInput }}">
                     </div>
-                    <div class="sm:w-56">
+                    <div class="w-full">
                         <label class="mb-1 block text-xs text-gray-400">Gaji harian (Rp)</label>
                         <input type="number" min="0" inputmode="numeric"
                                :name="`items[${index}][gaji_harian]`" x-model="item.gaji_harian"
                                class="{{ $kelasInput }}">
                     </div>
-                    <div class="col-span-2 flex items-center justify-between border-t border-white/10 pt-3 sm:ml-auto sm:block sm:border-0 sm:pt-0 sm:text-right">
-                        <p class="text-xs text-gray-400">Total</p>
-                        <p class="font-semibold" x-text="rp(totalItem(item))"></p>
-                    </div>
+                </div>
+                <div class="col-span-2 flex items-center justify-between border-t border-white/10 pt-3 sm:ml-auto sm:block sm:border-0 sm:pt-0 sm:text-right">
+                    <p class="text-xs text-gray-400">Total</p>
+                    <p class="font-semibold" x-text="rp(totalItem(item))"></p>
                 </div>
             </div>
         </template>
