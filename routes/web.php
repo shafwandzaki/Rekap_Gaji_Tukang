@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PekerjaController;
 use App\Http\Controllers\RekapController;
@@ -13,9 +14,7 @@ Route::middleware('guest')->group(function () {
 
 // Hanya untuk yang SUDAH login
 Route::middleware('auth')->group(function () {
-    Route::get('/', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::post('/logout', [LoginController::class, 'keluar'])->name('logout');
 
