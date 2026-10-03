@@ -2,7 +2,7 @@
 
 @section('isi')
 
-    <h1 class="mb-6 text-2xl font-bold">Rekap Gaji</h1>
+    <h1 class="mb-6 text-2xl font-bold"> Form Rekap Gaji</h1>
 
     <form method="POST" action="{{ route('rekap.store') }}">
         @csrf

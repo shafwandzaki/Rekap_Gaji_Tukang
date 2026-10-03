@@ -109,8 +109,6 @@
 
 <div x-data="rekapForm(@js($awal))" class="w-full max-w-4xl">
 
-    <h2 class="mb-4 font-semibold">Form Rekap</h2>
-
     {{-- Nama proyek --}}
     <label for="proyek" class="mb-1 block text-sm text-gray-300">Nama Proyek</label>
     <input id="proyek" type="text" name="proyek" placeholder="Proyek..."

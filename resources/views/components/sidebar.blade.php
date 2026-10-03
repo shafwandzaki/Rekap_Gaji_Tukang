@@ -26,8 +26,8 @@
         <div>
             <!-- Logo / Brand -->
             <div class="px-6 py-6 flex items-center gap-2 whitespace-nowrap">
-                <img src="{{asset('icon/#')}}" alt="" class="h-9 w-9 rounded">
-                <span class="font-bold text-lg text-white">Rekap Gaji Tukang</span>
+                <img src="{{asset('icon/logo_rgt.png')}}" alt="" class="h-9 w-9 rounded">
+                <span class="font-semibold text-lg text-white">Rekap Gaji Tukang</span>
             </div>
 
             <!-- Navigation Links -->

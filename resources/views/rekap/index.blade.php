@@ -10,15 +10,14 @@
         </a>
     </div>
 
-    {{-- Filter proyek --}}
-    <form method="GET" action="{{ route('rekap.index') }}" class="mb-4">
-        <select name="proyek" onchange="this.form.submit()"
-                class="w-full rounded-lg border border-white/10 bg-[#1c1c1e] px-4 py-2.5 text-sm text-white md:w-72">
-            <option value="">Semua proyek</option>
-            @foreach ($proyeks as $p)
-                <option value="{{ $p->id }}" @selected((string) $proyekId === (string) $p->id)>{{ $p->nama }}</option>
-            @endforeach
-        </select>
+    {{-- Pencarian nama proyek --}}
+    <form method="GET" action="{{ route('rekap.index') }}" class="mb-4 flex gap-2">
+        <input type="search" name="cari" value="{{ $cari }}" placeholder="Cari nama proyek..."
+               class="w-full rounded-lg border border-white/10 bg-[#1c1c1e] px-4 py-2.5 text-base text-white sm:text-sm md:w-72">
+        <button type="submit"
+                class="shrink-0 rounded-lg border border-white/10 px-4 py-2.5 text-sm hover:bg-white/5">
+            Cari
+        </button>
     </form>
 
     <div class="space-y-3">

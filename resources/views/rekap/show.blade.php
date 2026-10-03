@@ -2,7 +2,7 @@
 
 @section('isi')
 
-    <a href="{{ route('rekap.index') }}" class="mb-4 inline-block text-xl font-bold text-gray-300 hover:text-white">
+    <a href="{{ route('rekap.index') }}" class="mb-4 inline-block text-2xl font-semibold text-gray-300 hover:text-white">
         &larr; Detail Rekap
     </a>
 

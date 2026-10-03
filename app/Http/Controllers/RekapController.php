@@ -14,19 +14,21 @@ use Illuminate\Validation\ValidationException;
 class RekapController extends Controller
 {
     // Daftar rekap (+ filter proyek)
+    // Daftar rekap (+ pencarian nama proyek)
     public function index(Request $request)
     {
-        $proyekId = $request->query('proyek');
+        $cari = trim((string) $request->query('cari'));
 
         $rekaps = Rekap::with('proyek')
-            ->when($proyekId, fn ($q) => $q->where('proyek_id', $proyekId))
+            ->when($cari !== '', fn ($q) => $q->whereHas(
+                'proyek',
+                fn ($p) => $p->where('nama', 'like', "%{$cari}%")
+            ))
             ->orderByDesc('tanggal_mulai')
             ->orderByDesc('id')
             ->get();
 
-        $proyeks = Proyek::orderBy('nama')->get();
-
-        return view('rekap.index', compact('rekaps', 'proyeks', 'proyekId'));
+        return view('rekap.index', compact('rekaps', 'cari'));
     }
 
     // Form tambah
