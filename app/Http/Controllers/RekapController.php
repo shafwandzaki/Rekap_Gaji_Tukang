@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Pekerja;
 use App\Models\Proyek;
 use App\Models\Rekap;
+use App\Exports\RekapExport;
+use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\ValidationException;
@@ -90,6 +92,18 @@ class RekapController extends Controller
 
         return redirect()->route('rekap.index')
             ->with('sukses', 'Rekap dihapus.');
+    }
+
+    // Unduh rekap sebagai file Excel
+    public function export(Rekap $rekap)
+    {
+        $rekap->load('proyek');
+
+        // Nama file: karakter yang dilarang di nama file (misalnya "/" pada "F1/22") diganti "-"
+        $nama = preg_replace('/[\\\\\/:*?"<>|]+/', '-', $rekap->proyek->nama);
+        $file = "Rekap {$nama} {$rekap->tanggal_mulai->format('Y-m-d')}.xlsx";
+
+        return Excel::download(new RekapExport($rekap), $file);
     }
 
     // ---------------------------------------------------------

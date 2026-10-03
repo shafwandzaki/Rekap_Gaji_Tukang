@@ -56,10 +56,11 @@
         </table>
     </div>
 
-    <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
+    <div class="mt-6 flex flex-wrap items-center gap-3">
         {{-- Export Excel belum dibuat, diaktifkan di langkah berikutnya --}}
-        <span class="cursor-not-allowed rounded-lg border border-white/20 px-5 py-2 text-sm text-gray-500"
-              title="Segera hadir">Export XLS</span>
+        <a href="{{ route('rekap.export', $rekap) }}" class="rounded-lg bg-green-600 px-5 py-2 text-sm hover:bg-green-400 font-bold">
+            Export XLS
+        </a>
 
         <a href="{{ route('rekap.edit', $rekap) }}"
            class="rounded-lg bg-blue-600 px-5 py-2 text-sm font-semibold text-white hover:bg-blue-500">

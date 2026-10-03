@@ -20,5 +20,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/logout', [LoginController::class, 'keluar'])->name('logout');
 
     Route::resource('pekerja', PekerjaController::class);
+    
+    Route::get('rekap/{rekap}/export', [RekapController::class, 'export'])->name('rekap.export');
     Route::resource('rekap', RekapController::class);
 });

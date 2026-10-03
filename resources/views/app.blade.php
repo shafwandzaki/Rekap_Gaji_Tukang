@@ -9,7 +9,7 @@
 </head>
 <body class="bg-[#131315] text-white h-screen flex overflow-hidden">
     <x-sidebar></x-sidebar>
-    <main class="flex-1 p-10 pt-20 md:p-12 overflow-y-auto h-full w-full">
+    <main class="flex-1 p-4 sm:p-10 pt-20 md:p-12 overflow-y-auto h-full w-full">
         {{-- Notifikasi sukses --}}
         @if(session('success'))
             <div class="bg-green-500/10 border border-green-500/30 text-green-400 px-4 py-3 rounded-lg mb-8 w-full">

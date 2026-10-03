@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
+/**
+ * @property \Illuminate\Support\Carbon $tanggal_mulai
+ * @property \Illuminate\Support\Carbon $tanggal_selesai
+ */
 class Rekap extends Model
 {
     protected $fillable = [
