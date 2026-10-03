@@ -7,8 +7,8 @@ rencana besok:
 6. buat export exel
 
 Perbaikan Bug:
-1. form tambahan tidak usah pakai tambah baris
+1. form tambahan tidak usah pakai tambah baris ✅
 2. rapihkan responsif mobile form rekap gaji card pilih pekerja ✅
-3. ubah input tanggal menjadi dd/mm/yyyy di desktop
-4. fitur filter ubah menjadi search atau tidak usah pakai sama sekali
-5. hilangkan saran proyek di form nama proyek ✅
+3. fitur filter ubah menjadi search atau tidak usah pakai sama sekali
+4. hilangkan saran proyek di form nama proyek ✅
+5. ubah sistem pemilihan tambah pekerja ✅
